@@ -1,0 +1,16 @@
+{
+  "name": "gereth-site",
+  "version": "1.0.0",
+  "description": "Therapist website (Hebrew RTL) built with Eleventy",
+  "scripts": {
+    "build": "node node_modules/@11ty/eleventy/cmd.cjs",
+    "serve": "node node_modules/@11ty/eleventy/cmd.cjs --serve",
+    "clean": "rm -rf _site"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "luxon": "^3.7.2",
+    "markdown-it": "^14.1.1"
+  }
+}

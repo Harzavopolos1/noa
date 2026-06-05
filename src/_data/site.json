@@ -1,0 +1,40 @@
+{
+  "title": "נועה ארנטל — פסיכותרפיה וטיפול נפשי",
+  "therapistName": "נועה ארנטל",
+  "tagline": "פסיכותרפיה וטיפול נפשי",
+  "profession": "עו\"ס קלינית (MSW), פסיכותרפיסטית ומדריכה קלינית",
+  "credentials": "מנהלת מקצועית ארצית של שירות הפסיכותרפיה המקוונת בחברת שר\"ן, ובעלת קליניקה פרטית.",
+  "license": "מס' רישום בפנקס העו\"סים: 37029",
+  "lang": "he",
+  "dir": "rtl",
+  "description": "נועה ארנטל, עו\"ס קלינית (MSW), פסיכותרפיסטית ומדריכה קלינית. מנהלת מקצועית ארצית של שירות פסיכותרפיה מקוונת. טיפול נפשי בתל אביב–יפו ואונליין מכל מקום.",
+  "url": "",
+  "location": "תל אביב–יפו · ואונליין מכל מקום",
+  "phone": "054-455-6248",
+  "phoneIntl": "+972544556248",
+  "email": "",
+  "whatsapp": "972544556248",
+  "facebook": "https://www.facebook.com/noa.erental.therapy",
+  "linkedin": "https://www.linkedin.com/in/noaerental-295a86293",
+  "instagram": "",
+  "nav": [
+    { "label": "אודות", "url": "/about/" },
+    { "label": "כלים טיפוליים", "url": "/therapeutic-tools/" },
+    { "label": "טיפול אונליין", "url": "/online-therapy/", "children": [
+      { "label": "טיפול נפשי אונליין", "url": "/online-therapy/mental/" },
+      { "label": "טיפול CBT אונליין", "url": "/online-therapy/cbt/" },
+      { "label": "טיפול רגשי אונליין", "url": "/online-therapy/emotional/" },
+      { "label": "טיפול דינמי אונליין", "url": "/online-therapy/dynamic/" }
+    ] },
+    { "label": "מאמרים", "url": "/articles/" },
+    { "label": "בתקשורת", "url": "/in-the-media/" },
+    { "label": "פרויקטים", "url": "/projects/" },
+    { "label": "צור קשר", "url": "/contact/" }
+  ],
+  "services": [
+    { "label": "טיפול נפשי אונליין", "url": "/online-therapy/mental/" },
+    { "label": "טיפול CBT אונליין", "url": "/online-therapy/cbt/" },
+    { "label": "טיפול רגשי אונליין", "url": "/online-therapy/emotional/" },
+    { "label": "טיפול דינמי אונליין", "url": "/online-therapy/dynamic/" }
+  ]
+}

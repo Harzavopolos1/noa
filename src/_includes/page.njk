@@ -1,0 +1,31 @@
+---
+layout: base.njk
+---
+<!-- Reusable content-page layout -->
+{% set root = page.url | rootPath %}
+<section class="page-hero">
+  <div class="band-inner narrow">
+    {% if eyebrow %}<span class="eyebrow" style="justify-content:center">{{ eyebrow }}</span>{% endif %}
+    <h1>{{ heroTitle or pageTitle }}</h1>
+    {% if heroSub %}<p class="page-hero-sub">{{ heroSub }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="band">
+  <div class="band-inner narrow prose reveal">
+    {{ content | safe }}
+  </div>
+</section>
+
+{% if not hideCta %}
+<section class="band band-soft cta-band">
+  <div class="band-inner narrow">
+    <h2>מתאים לכם? בואו נדבר</h2>
+    <p>שיחת היכרות ראשונית, ללא התחייבות — נחשוב יחד מה הכי מתאים עבורכם.</p>
+    <div class="cta-actions">
+      <a href="{{ root }}/contact/" class="btn btn-primary">לתיאום שיחה</a>
+      <a href="https://wa.me/{{ site.whatsapp }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+{% endif %}
