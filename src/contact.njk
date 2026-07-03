@@ -2,6 +2,7 @@
 layout: base.njk
 pageTitle: "צור קשר"
 permalink: "/contact/"
+pageDescription: "צרו קשר עם נועה ארנטל — פסיכותרפיסטית ועו\"ס קלינית. טופס פנייה, טלפון או וואטסאפ. שיחת היכרות ראשונית ללא התחייבות, מענה תוך יום עסקים."
 ---
 {% set root = page.url | rootPath %}
 <section class="page-hero">
@@ -15,20 +16,25 @@ permalink: "/contact/"
     <div>
       <p>מלאו את הפרטים ואחזור אליכם בהקדם לתיאום שיחת היכרות ראשונית, ללא התחייבות.</p>
       <div class="contact-direct">
-        <a href="tel:{{ site.phoneIntl }}" class="contact-line">📞 {{ site.phone }}</a>
-        <a href="https://wa.me/{{ site.whatsapp }}" class="contact-line" target="_blank" rel="noopener">💬 שליחת הודעת WhatsApp</a>
-        <a href="{{ site.facebook }}" class="contact-line" target="_blank" rel="noopener">👋 עמוד הפייסבוק שלי</a>
+        <a href="tel:{{ site.phoneIntl }}" class="contact-line"><span aria-hidden="true">📞</span> {{ site.phone }}</a>
+        <a href="https://wa.me/{{ site.whatsapp }}" class="contact-line" target="_blank" rel="noopener"><span aria-hidden="true">💬</span> שליחת הודעת WhatsApp</a>
+        <a href="{{ site.facebook }}" class="contact-line" target="_blank" rel="noopener"><span aria-hidden="true">👋</span> עמוד הפייסבוק שלי</a>
       </div>
       <p style="margin-top:18px;color:var(--muted);font-size:.92rem">{{ site.location }}<br>{{ site.license }}</p>
     </div>
     <form class="contact-form" onsubmit="return handleContact(event)">
+      <input type="hidden" name="access_key" value="{{ site.web3formsKey }}">
+      <input type="hidden" name="subject" value="פנייה חדשה מהאתר — נועה ארנטל">
+      <input type="hidden" name="from_name" value="האתר של נועה ארנטל">
+      <input type="checkbox" name="botcheck" class="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label>שם מלא *<input type="text" name="name" required></label>
       <label>טלפון *<input type="tel" name="phone" required></label>
       <label>מייל<input type="email" name="email"></label>
       <label>איך אוכל לעזור לך?<textarea name="message" rows="4"></textarea></label>
       <label class="consent"><input type="checkbox" required> אני מאשר/ת את <a href="{{ root }}/privacy-policy/">מדיניות הפרטיות</a></label>
       <button type="submit" class="btn btn-primary btn-block">שליחה</button>
-      <p class="form-msg" id="formMsg" hidden></p>
+      <p class="form-note">אחזור אליך תוך יום עסקים. הפרטים נשמרים בסודיות מלאה.</p>
+      <p class="form-msg" hidden></p>
     </form>
   </div>
 </section>

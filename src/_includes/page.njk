@@ -17,6 +17,38 @@ layout: base.njk
   </div>
 </section>
 
+{% if faq %}
+<section class="band band-cream">
+  <div class="band-inner narrow">
+    <div class="section-head">
+      <h2>שאלות נפוצות</h2>
+    </div>
+    <div class="faq-list">
+      {% for item in faq %}
+      <details class="faq-item">
+        <summary>{{ item.q }}</summary>
+        <div class="faq-body">{{ item.a }}</div>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for item in faq %}{"@type":"Question","name":{{ item.q | dump | safe }},"acceptedAnswer":{"@type":"Answer","text":{{ item.a | dump | safe }}}}{% if not loop.last %},{% endif %}{% endfor %}]}</script>
+{% endif %}
+
+{% if related %}
+<section class="band">
+  <div class="band-inner narrow related-links">
+    <h2>אולי יעניין אותך גם</h2>
+    <ul>
+      {% for r in related %}
+      <li><a href="{{ root }}{{ r.url }}">{{ r.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
 {% if not hideCta %}
 <section class="band band-soft cta-band">
   <div class="band-inner narrow">

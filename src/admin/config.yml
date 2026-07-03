@@ -1,0 +1,44 @@
+backend:
+  name: github
+  repo: Harzavopolos1/noa
+  branch: main
+
+site_url: https://noa.arnavnavon.com
+display_url: https://noa.arnavnavon.com
+
+media_folder: src/assets/images/uploads
+public_folder: /assets/images/uploads
+
+slug:
+  encoding: unicode
+  clean_accents: false
+
+collections:
+  - name: articles
+    label: מאמרים
+    label_singular: מאמר
+    folder: src/articles
+    create: true
+    extension: md
+    format: yaml-frontmatter
+    identifier_field: pageTitle
+    summary: "{{pageTitle}}"
+    slug: "{{slug}}"
+    sortable_fields: [date, pageTitle]
+    fields:
+      - name: pageTitle
+        label: כותרת המאמר
+        widget: string
+      - name: pageDescription
+        label: תיאור קצר
+        hint: "משפט או שניים שיופיעו בתוצאות גוגל ובשיתוף בוואטסאפ (עד כ-160 תווים)."
+        widget: text
+      - name: date
+        label: תאריך פרסום
+        widget: datetime
+        format: "YYYY-MM-DD"
+        time_format: false
+      - name: body
+        label: תוכן המאמר
+        hint: "כותרות משנה, הדגשות ותמונות — דרך סרגל הכלים. בסיום: שמירה ופרסום."
+        widget: markdown

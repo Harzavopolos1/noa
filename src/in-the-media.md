@@ -1,15 +1,6 @@
 ---
-layout: page.njk
-permalink: "/in-the-media/"
-pageTitle: "בתקשורת"
-eyebrow: "בתקשורת"
-heroTitle: "בתקשורת"
-heroSub: "הופעות, ראיונות ושיתופי פעולה."
+permalink: false
+eleventyExcludeFromCollections: true
 ---
-
-המדור בבנייה. כאן יתפרסמו עם הזמן ראיונות, הופעות ושיתופי פעולה בתקשורת.
-
-בינתיים אתם מוזמנים להתעדכן בעמוד הפייסבוק שלי או לפנות אליי ישירות.
-
-- [עמוד הפייסבוק שלי](https://www.facebook.com/noa.erental.therapy)
-- [הפרופיל המקצועי שלי ב‑LinkedIn](https://www.linkedin.com/in/noaerental-295a86293)
+<!-- Page removed from the site until real media content exists (Ore, 2026-06-12).
+     File kept because the sandbox can't delete it; permalink:false means it does not build. -->

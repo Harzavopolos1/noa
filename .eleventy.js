@@ -5,6 +5,9 @@ module.exports = function (eleventyConfig) {
   // --- Pass through static assets ---
   eleventyConfig.addPassthroughCopy("src/assets");
 
+  // --- Sveltia CMS admin panel (static, served at /admin/) ---
+  eleventyConfig.addPassthroughCopy("src/admin");
+
   // --- Custom domain file for GitHub Pages (copies ./CNAME -> _site/CNAME) ---
   eleventyConfig.addPassthroughCopy({ "CNAME": "CNAME" });
 

@@ -8,7 +8,10 @@
   "lang": "he",
   "dir": "rtl",
   "description": "נועה ארנטל, עו\"ס קלינית (MSW), פסיכותרפיסטית ומדריכה קלינית. מנהלת מקצועית ארצית של שירות פסיכותרפיה מקוונת. טיפול נפשי בתל אביב–יפו ואונליין מכל מקום.",
-  "url": "",
+  "url": "https://noa.arnavnavon.com",
+  "ogImage": "/assets/images/noa-alt.jpg",
+  "web3formsKey": "19beb327-a689-464f-bf76-1c74eb85481d",
+  "cfAnalyticsToken": "",
   "location": "תל אביב–יפו · ואונליין מכל מקום",
   "phone": "054-455-6248",
   "phoneIntl": "+972544556248",
@@ -27,8 +30,6 @@
       { "label": "טיפול דינמי אונליין", "url": "/online-therapy/dynamic/" }
     ] },
     { "label": "מאמרים", "url": "/articles/" },
-    { "label": "בתקשורת", "url": "/in-the-media/" },
-    { "label": "פרויקטים", "url": "/projects/" },
     { "label": "צור קשר", "url": "/contact/" }
   ],
   "services": [

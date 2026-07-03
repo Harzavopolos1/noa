@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 pageTitle: ""
+pageDescription: "נועה ארנטל — עו\"ס קלינית (MSW) ופסיכותרפיסטית מוסמכת. טיפול נפשי בקליניקה בתל אביב ואונליין מכל מקום. מנהלת מקצועית ארצית של שירות פסיכותרפיה מקוונת. שיחת היכרות ללא התחייבות."
 ---
 {% set root = page.url | rootPath %}
 
@@ -95,6 +96,22 @@ pageTitle: ""
   </div>
 </section>
 
+<!-- PRACTICAL INFO -->
+<section class="band band-soft" id="practical">
+  <div class="band-inner">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">פרטים מעשיים</span>
+      <h2>מה חשוב לדעת</h2>
+    </div>
+    <div class="practical-grid reveal d1">
+      <div class="practical-item"><strong>איפה</strong><span>בקליניקה בתל אביב, או אונליין בשיחת וידאו — מכל מקום בארץ ובעולם</span></div>
+      <div class="practical-item"><strong>למי</strong><span>מבוגרים, ונוער מגיל 16</span></div>
+      <div class="practical-item"><strong>באיזו שפה</strong><span>עברית ואנגלית</span></div>
+      <div class="practical-item"><strong>הכרה</strong><span>ספקית מוכרת של משרד הביטחון — אגף משפחות</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- QUOTE / APPROACH -->
 <section class="band band-quote reveal">
   <div class="band-inner narrow">
@@ -158,6 +175,14 @@ pageTitle: ""
   </div>
 </section>
 
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"איך יודעים אם טיפול מתאים לי?","acceptedAnswer":{"@type":"Answer","text":"לא חייבים לדעת מראש. הצעד הראשון הוא שיחת היכרות קצרה וללא התחייבות — נכיר, נבין מה מביא אותך, ונחשוב יחד אם ואיך הטיפול יכול לעזור."}},
+{"@type":"Question","name":"האם טיפול אונליין באמת יעיל?","acceptedAnswer":{"@type":"Answer","text":"כן. מחקרים מראים שטיפול מקוון יעיל לא פחות מטיפול פנים אל פנים. זהו תחום ההתמחות שלי — אני מנהלת ומדריכה צוותי מטפלים בשירות פסיכותרפיה מקוונת, ומביאה את הניסיון הזה לכל פגישה."}},
+{"@type":"Question","name":"כמה זמן נמשך תהליך טיפולי?","acceptedAnswer":{"@type":"Answer","text":"זה משתנה מאדם לאדם ותלוי במטרות ובקצב שלך. יש תהליכים קצרים וממוקדים ויש מתמשכים יותר. נגדיר יחד מטרות ונבחן את ההתקדמות לאורך הדרך."}},
+{"@type":"Question","name":"מה נשאר חסוי?","acceptedAnswer":{"@type":"Answer","text":"הכול. על המידע שנמסר בטיפול חלה חובת סודיות מקצועית מלאה, בהתאם לכללי האתיקה של העובדים הסוציאליים ולחוק."}},
+{"@type":"Question","name":"איך מתחילים?","acceptedAnswer":{"@type":"Answer","text":"משאירים פרטים בטופס, בטלפון או בוואטסאפ, ואחזור אליכם לתיאום שיחת היכרות ראשונית. משם נמשיך יחד בקצב שמתאים לכם."}}
+]}</script>
+
 <!-- CONTACT -->
 <section class="band band-contact" id="contact">
   <div class="band-inner two-col contact-block">
@@ -166,21 +191,26 @@ pageTitle: ""
       <h2>בואו נהיה בקשר</h2>
       <p>ההחלטה לפנות לטיפול היא צעד אמיץ. אני מזמינה אתכם להתייעץ איתי בלי התחייבות — מלאו פרטים ואחזור אליכם בהקדם.</p>
       <div class="contact-direct">
-        <a href="tel:{{ site.phoneIntl }}" class="contact-line">📞 {{ site.phone }}</a>
-        <a href="https://wa.me/{{ site.whatsapp }}" class="contact-line" target="_blank" rel="noopener">💬 שליחת הודעת WhatsApp</a>
-        <a href="{{ site.facebook }}" class="contact-line" target="_blank" rel="noopener">👋 עמוד הפייסבוק שלי</a>
-        <a href="{{ site.linkedin }}" class="contact-line" target="_blank" rel="noopener">🔗 הפרופיל המקצועי שלי ב‑LinkedIn</a>
+        <a href="tel:{{ site.phoneIntl }}" class="contact-line"><span aria-hidden="true">📞</span> {{ site.phone }}</a>
+        <a href="https://wa.me/{{ site.whatsapp }}" class="contact-line" target="_blank" rel="noopener"><span aria-hidden="true">💬</span> שליחת הודעת WhatsApp</a>
+        <a href="{{ site.facebook }}" class="contact-line" target="_blank" rel="noopener"><span aria-hidden="true">👋</span> עמוד הפייסבוק שלי</a>
+        <a href="{{ site.linkedin }}" class="contact-line" target="_blank" rel="noopener"><span aria-hidden="true">🔗</span> הפרופיל המקצועי שלי ב‑LinkedIn</a>
       </div>
       <p style="margin-top:18px;color:var(--muted);font-size:.92rem">{{ site.location }}<br>{{ site.license }}</p>
     </div>
     <form class="contact-form reveal d2" onsubmit="return handleContact(event)">
+      <input type="hidden" name="access_key" value="{{ site.web3formsKey }}">
+      <input type="hidden" name="subject" value="פנייה חדשה מהאתר — נועה ארנטל">
+      <input type="hidden" name="from_name" value="האתר של נועה ארנטל">
+      <input type="checkbox" name="botcheck" class="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label>שם מלא *<input type="text" name="name" required></label>
       <label>טלפון *<input type="tel" name="phone" required></label>
       <label>מייל<input type="email" name="email"></label>
       <label>איך אוכל לעזור לך?<textarea name="message" rows="4"></textarea></label>
       <label class="consent"><input type="checkbox" required> אני מאשר/ת את <a href="{{ root }}/privacy-policy/">מדיניות הפרטיות</a></label>
       <button type="submit" class="btn btn-primary btn-block">שליחה</button>
-      <p class="form-msg" id="formMsg" hidden></p>
+      <p class="form-note">אחזור אליך תוך יום עסקים. הפרטים נשמרים בסודיות מלאה.</p>
+      <p class="form-msg" hidden></p>
     </form>
   </div>
 </section>

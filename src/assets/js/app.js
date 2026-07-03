@@ -34,13 +34,54 @@
   els.forEach(function (el) { io.observe(el); });
 })();
 
-// Contact form (placeholder — not wired to a backend yet)
+// Contact form — Web3Forms (AJAX, stays on page)
+function showFormError(msg) {
+  if (!msg) return;
+  msg.hidden = false;
+  msg.classList.remove('ok');
+  msg.classList.add('error');
+  msg.innerHTML = 'השליחה לא הצליחה כרגע. מוזמנים ליצור קשר ישירות: <a href="tel:+972544556248">054-455-6248</a> או <a href="https://wa.me/972544556248" target="_blank" rel="noopener">בוואטסאפ</a>.';
+}
+
 function handleContact(e) {
   e.preventDefault();
-  var msg = document.getElementById('formMsg');
-  if (msg) {
-    msg.hidden = false;
-    msg.textContent = 'תודה! הטופס עדיין לא מחובר לשליחה — נחבר אותו בהמשך.';
+  var form = e.target;
+  var msg = form.querySelector('.form-msg');
+  var btn = form.querySelector('button[type="submit"]');
+  var data = new FormData(form);
+
+  // Key not wired yet → graceful fallback to direct channels
+  if (!data.get('access_key')) {
+    showFormError(msg);
+    return false;
   }
+
+  var orig = btn ? btn.textContent : '';
+  if (btn) { btn.disabled = true; btn.textContent = 'שולחת…'; }
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+    .then(function (r) { return r.json(); })
+    .then(function (res) {
+      if (res.success) {
+        form.reset();
+        if (msg) {
+          msg.hidden = false;
+          msg.classList.remove('error');
+          msg.classList.add('ok');
+          msg.textContent = 'תודה! פנייתך התקבלה — אחזור אליך תוך יום עסקים.';
+        }
+      } else {
+        showFormError(msg);
+      }
+    })
+    .catch(function () { showFormError(msg); })
+    .finally(function () {
+      if (btn) { btn.disabled = false; btn.textContent = orig; }
+    });
+
   return false;
 }

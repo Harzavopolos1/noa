@@ -1,0 +1,61 @@
+---
+layout: base.njk
+---
+{% set root = page.url | rootPath %}
+<section class="page-hero">
+  <div class="band-inner narrow">
+    <span class="eyebrow" style="justify-content:center">מאמרים</span>
+    <h1>{{ pageTitle }}</h1>
+    <p class="article-meta">{{ page.date | readableDate }} · נועה ארנטל</p>
+  </div>
+</section>
+
+<article class="band">
+  <div class="band-inner narrow prose reveal">
+    {{ content | safe }}
+  </div>
+</article>
+
+<section class="band">
+  <div class="band-inner narrow">
+    <div class="author-box">
+      <img src="{{ root }}/assets/images/noa.jpg" alt="נועה ארנטל">
+      <div>
+        <strong>נועה ארנטל</strong>
+        <p>עו"ס קלינית (MSW), פסיכותרפיסטית מוסמכת ומדריכה קלינית. מנהלת מקצועית ארצית של שירות הפסיכותרפיה המקוונת בחברת שר"ן, ובעלת קליניקה פרטית. {{ site.license }}.</p>
+        <a href="{{ root }}/about/">עוד עליי ←</a>
+      </div>
+    </div>
+    <p class="article-back"><a href="{{ root }}/articles/">→ לכל המאמרים</a></p>
+  </div>
+</section>
+
+<section class="band band-soft cta-band">
+  <div class="band-inner narrow">
+    <h2>רוצה לחשוב על זה יחד?</h2>
+    <p>שיחת היכרות ראשונית, ללא התחייבות — נבין יחד מה מתאים לך.</p>
+    <div class="cta-actions">
+      <a href="{{ root }}/contact/" class="btn btn-primary">לתיאום שיחה</a>
+      <a href="https://wa.me/{{ site.whatsapp }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ pageTitle | dump | safe }},
+  "description": {{ pageDescription | dump | safe }},
+  "inLanguage": "he",
+  "datePublished": "{{ page.date.toISOString().split('T')[0] }}",
+  "image": "{{ site.url }}{{ site.ogImage }}",
+  "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.therapistName }}",
+    "jobTitle": "עובדת סוציאלית קלינית (MSW), פסיכותרפיסטית מוסמכת ומדריכה קלינית",
+    "url": "{{ site.url }}/about/"
+  }
+}
+</script>
