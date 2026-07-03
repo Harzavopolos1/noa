@@ -248,6 +248,41 @@ collections:
           - { name: url, label: כתובת, widget: string }
       - { name: body, label: תוכן העמוד, widget: markdown }
 
+  # ===== עמודי התמחות =====
+  - name: specialties
+    label: עמודי התמחות
+    icon: psychology
+    folder: src/specialties
+    extension: md
+    format: yaml-frontmatter
+    create: true
+    delete: false
+    identifier_field: pageTitle
+    summary: "{{pageTitle}}"
+    fields:
+      - { name: layout, label: תבנית, widget: hidden, default: page.njk }
+      - { name: permalink, label: "כתובת העמוד (למשל /anxiety/)", widget: string }
+      - { name: pageTitle, label: שם העמוד, widget: string }
+      - { name: pageDescription, label: "תיאור לגוגל (עד 160 תווים)", widget: text }
+      - { name: eyebrow, label: שורה קטנה מעל הכותרת, widget: string, required: false }
+      - { name: heroTitle, label: כותרת ראשית, widget: string, required: false }
+      - { name: heroSub, label: משפט משנה, widget: text, required: false }
+      - name: faq
+        label: שאלות נפוצות בעמוד
+        widget: list
+        required: false
+        fields:
+          - { name: q, label: שאלה, widget: string }
+          - { name: a, label: תשובה, widget: text }
+      - name: related
+        label: קישורים לעמודים קשורים
+        widget: list
+        required: false
+        fields:
+          - { name: label, label: טקסט הקישור, widget: string }
+          - { name: url, label: כתובת, widget: string }
+      - { name: body, label: תוכן העמוד, widget: markdown }
+
   # ===== עמודים נוספים =====
   - name: pages
     label: עמודים נוספים
