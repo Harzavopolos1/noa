@@ -54,7 +54,7 @@ function handleContact(e) {
   var orig = btn ? btn.textContent : '';
   if (btn) { btn.disabled = true; btn.textContent = 'שולחת…'; }
 
-  fetch('https://noa-leads.orneviot.workers.dev/', {
+  fetch('https://noa-leads.arnavnavon.com/', {
     method: 'POST',
     body: data,
     headers: { 'Accept': 'application/json' }

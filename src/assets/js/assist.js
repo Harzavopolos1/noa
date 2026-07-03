@@ -1,6 +1,6 @@
 // העוזרת של נועה — site chat widget (talks to noa-assist worker)
 (function () {
-  var API = 'https://noa-assist.orneviot.workers.dev/chat';
+  var API = 'https://noa-assist.arnavnavon.com/chat';
   var GREETING = 'היי! אני העוזרת הדיגיטלית של האתר 🌿\n\nחשוב לדעת: אני כלי עזר בלבד — לא מטפלת ולא נותנת ייעוץ רפואי או אבחנות, ונועה אינה אחראית לתשובותיי. השיחה נשמרת לצורך שיפור השירות וכדי שנועה תוכל לחזור אליך אם תבקש/י.\n\nבמצוקה חריפה אני לא הכתובת — ער"ן זמינים 24/7 בטלפון 1201.\n\nובכל שאלה על טיפול, על נועה או על איך מתחילים — אני כאן 🙂 במה אפשר לעזור?';
 
   function el(tag, cls, html) {
