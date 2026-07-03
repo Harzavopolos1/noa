@@ -22,7 +22,7 @@ layout: base.njk
       <img src="{{ root }}/assets/images/noa.jpg" alt="נועה ארנטל">
       <div>
         <strong>נועה ארנטל</strong>
-        <p>עו"ס קלינית (MSW), פסיכותרפיסטית מוסמכת ומדריכה קלינית. מנהלת מקצועית ארצית של שירות הפסיכותרפיה המקוונת בחברת שר"ן, ובעלת קליניקה פרטית. {{ site.license }}.</p>
+        <p>עו"ס קלינית (MSW), פסיכותרפיסטית מוסמכת ומדריכה קלינית. מנהלת מקצועית ארצית של שירות הפסיכותרפיה המקוונת בחברת שר"ן, ובעלת קליניקה פרטית. {{ business.license }}.</p>
         <a href="{{ root }}/about/">עוד עליי ←</a>
       </div>
     </div>
@@ -36,7 +36,7 @@ layout: base.njk
     <p>שיחת היכרות ראשונית, ללא התחייבות — נבין יחד מה מתאים לך.</p>
     <div class="cta-actions">
       <a href="{{ root }}/contact/" class="btn btn-primary">לתיאום שיחה</a>
-      <a href="https://wa.me/{{ site.whatsapp }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://wa.me/{{ business.whatsapp }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
@@ -53,7 +53,7 @@ layout: base.njk
   "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
   "author": {
     "@type": "Person",
-    "name": "{{ site.therapistName }}",
+    "name": "{{ business.therapistName }}",
     "jobTitle": "עובדת סוציאלית קלינית (MSW), פסיכותרפיסטית מוסמכת ומדריכה קלינית",
     "url": "{{ site.url }}/about/"
   }

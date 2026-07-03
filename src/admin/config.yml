@@ -14,9 +14,304 @@ slug:
   clean_accents: false
 
 collections:
+  # ===== עמוד הבית =====
+  - name: home
+    label: עמוד הבית
+    icon: home
+    files:
+      - name: home_content
+        label: כל הטקסטים בעמוד הבית
+        file: src/_data/home.json
+        fields:
+          - name: hero
+            label: פתיח (למעלה)
+            widget: object
+            fields:
+              - { name: eyebrow, label: שורה קטנה מעל הכותרת, widget: string }
+              - { name: titleLine1, label: "כותרת — שורה ראשונה", widget: string }
+              - { name: titleAccent, label: "כותרת — שורה שנייה (צבעונית)", widget: string }
+              - { name: lead, label: פסקה ראשית, widget: text }
+              - { name: sub, label: פסקה שנייה, widget: text }
+              - { name: ctaPrimary, label: כפתור ראשי, widget: string }
+              - { name: ctaSecondary, label: כפתור משני, widget: string }
+              - { name: photo, label: תמונה ראשית, widget: image }
+              - { name: photoAlt, label: "תיאור התמונה (לגוגל ולעיוורים)", widget: string }
+              - { name: badgeTitle, label: "תגית על התמונה — שורה ראשונה", widget: string }
+              - { name: badgeSub, label: "תגית על התמונה — שורה שנייה", widget: string }
+          - name: trustStrip
+            label: פס אמון (מתחת לפתיח)
+            widget: list
+            field: { name: item, label: פריט, widget: string }
+          - name: online
+            label: מקטע טיפול אונליין
+            widget: object
+            fields:
+              - { name: eyebrow, label: שורה קטנה, widget: string }
+              - { name: title, label: כותרת, widget: string }
+              - { name: p1, label: פסקה ראשונה, widget: text }
+              - { name: p2, label: פסקה שנייה, widget: text }
+              - { name: cta, label: טקסט הכפתור, widget: string }
+              - name: checklist
+                label: רשימת יתרונות
+                widget: list
+                field: { name: item, label: יתרון, widget: string }
+          - name: methods
+            label: מקטע גישה ושיטות
+            widget: object
+            fields:
+              - { name: eyebrow, label: שורה קטנה, widget: string }
+              - { name: title, label: כותרת, widget: string }
+              - { name: sub, label: משפט הסבר, widget: text }
+              - name: cards
+                label: כרטיסי שיטות
+                widget: list
+                fields:
+                  - { name: tag, label: "תגית (קצר)", widget: string }
+                  - { name: text, label: שם השיטה, widget: string }
+          - name: steps
+            label: מקטע איך מתחילים
+            widget: object
+            fields:
+              - { name: eyebrow, label: שורה קטנה, widget: string }
+              - { name: title, label: כותרת, widget: string }
+              - name: items
+                label: שלושת השלבים
+                widget: list
+                fields:
+                  - { name: title, label: כותרת השלב, widget: string }
+                  - { name: text, label: הסבר, widget: text }
+          - name: practical
+            label: מקטע פרטים מעשיים
+            widget: object
+            fields:
+              - { name: eyebrow, label: שורה קטנה, widget: string }
+              - { name: title, label: כותרת, widget: string }
+              - name: items
+                label: הפריטים
+                widget: list
+                fields:
+                  - { name: label, label: "כותרת (איפה/למי...)", widget: string }
+                  - { name: text, label: התוכן, widget: text }
+          - name: quote
+            label: ציטוט
+            widget: object
+            fields:
+              - { name: text, label: הציטוט, widget: text }
+              - { name: cite, label: חתימה, widget: string }
+          - name: areas
+            label: מקטע תחומי טיפול
+            widget: object
+            fields:
+              - { name: eyebrow, label: שורה קטנה, widget: string }
+              - { name: title, label: כותרת, widget: string }
+              - { name: sub, label: משפט הסבר, widget: string }
+              - name: pills
+                label: תחומי הטיפול
+                widget: list
+                field: { name: item, label: תחום, widget: string }
+          - name: faqSection
+            label: שאלות נפוצות
+            widget: object
+            fields:
+              - { name: eyebrow, label: שורה קטנה, widget: string }
+              - { name: title, label: כותרת, widget: string }
+              - name: items
+                label: השאלות
+                widget: list
+                fields:
+                  - { name: q, label: שאלה, widget: string }
+                  - { name: a, label: תשובה, widget: text }
+          - name: contact
+            label: מקטע צור קשר (בעמוד הבית)
+            widget: object
+            fields:
+              - { name: eyebrow, label: שורה קטנה, widget: string }
+              - { name: title, label: כותרת, widget: string }
+              - { name: text, label: טקסט הזמנה, widget: text }
+
+  # ===== אודות =====
+  - name: about
+    label: עמוד אודות
+    icon: person
+    files:
+      - name: about_content
+        label: כל הטקסטים בעמוד אודות
+        file: src/_data/aboutPage.json
+        fields:
+          - { name: eyebrow, label: שורה קטנה, widget: string }
+          - { name: title, label: כותרת ראשית, widget: string }
+          - { name: subtitle, label: שורת תפקיד, widget: string }
+          - name: paragraphs
+            label: פסקאות הפתיחה
+            widget: list
+            field: { name: p, label: פסקה, widget: text }
+          - { name: ctaText, label: טקסט כפתור, widget: string }
+          - { name: photo, label: תמונה, widget: image }
+          - { name: photoAlt, label: תיאור התמונה, widget: string }
+          - name: approach
+            label: גישה טיפולית
+            widget: object
+            fields:
+              - { name: title, label: כותרת, widget: string }
+              - { name: text, label: טקסט, widget: text }
+          - name: education
+            label: השכלה והכשרה
+            widget: object
+            fields:
+              - { name: title, label: כותרת, widget: string }
+              - name: items
+                label: שורות ההשכלה
+                widget: list
+                field: { name: item, label: שורה, widget: string }
+              - { name: extraLabel, label: "כותרת ההסמכות הנוספות", widget: string }
+              - { name: extraText, label: "טקסט ההסמכות הנוספות", widget: text }
+          - name: experience
+            label: ניסיון מקצועי
+            widget: object
+            fields:
+              - { name: title, label: כותרת, widget: string }
+              - name: items
+                label: שורות הניסיון
+                widget: list
+                field: { name: item, label: שורה, widget: string }
+              - { name: ctaText, label: טקסט כפתור, widget: string }
+
+  # ===== צור קשר =====
+  - name: contact_page
+    label: עמוד צור קשר
+    icon: mail
+    files:
+      - name: contact_content
+        label: הטקסטים בעמוד צור קשר
+        file: src/_data/contactPage.json
+        fields:
+          - { name: eyebrow, label: שורה קטנה, widget: string }
+          - { name: title, label: כותרת, widget: string }
+          - { name: intro, label: משפט פתיחה, widget: text }
+          - { name: formNote, label: "ההערה מתחת לכפתור השליחה", widget: string }
+
+  # ===== פרטי קשר ועסק =====
+  - name: business
+    label: פרטי קשר ועסק
+    icon: badge
+    files:
+      - name: business_content
+        label: "טלפון, כתובת, רישיון וקישורים"
+        file: src/_data/business.json
+        fields:
+          - { name: therapistName, label: שם, widget: string }
+          - { name: tagline, label: שורת תיאור, widget: string }
+          - { name: profession, label: הגדרת מקצוע, widget: string }
+          - { name: credentials, label: "משפט הסמכה (בתחתית האתר)", widget: text }
+          - { name: license, label: שורת מספר רישיון, widget: string }
+          - { name: location, label: "מיקום (מופיע בתחתית האתר)", widget: string }
+          - { name: phone, label: "טלפון (לתצוגה)", widget: string }
+          - { name: phoneIntl, label: "טלפון בינלאומי (לחיוג בלחיצה, פורמט +972...)", widget: string }
+          - { name: whatsapp, label: "וואטסאפ (מספר בפורמט 972...)", widget: string }
+          - { name: email, label: "אימייל (ריק = לא מוצג)", widget: string, required: false }
+          - { name: facebook, label: קישור פייסבוק, widget: string }
+          - { name: linkedin, label: קישור לינקדאין, widget: string }
+          - { name: instagram, label: "קישור אינסטגרם (ריק = לא מוצג)", widget: string, required: false }
+
+  # ===== עמודי טיפול אונליין =====
+  - name: online_therapy
+    label: עמודי טיפול אונליין
+    icon: laptop_mac
+    folder: src/online-therapy
+    extension: md
+    format: yaml-frontmatter
+    create: false
+    delete: false
+    identifier_field: pageTitle
+    summary: "{{pageTitle}}"
+    fields:
+      - { name: layout, label: תבנית, widget: hidden, default: page.njk }
+      - { name: permalink, label: כתובת העמוד, widget: hidden }
+      - { name: pageTitle, label: שם העמוד, widget: string }
+      - { name: pageDescription, label: "תיאור לגוגל (עד 160 תווים)", widget: text }
+      - { name: eyebrow, label: שורה קטנה מעל הכותרת, widget: string, required: false }
+      - { name: heroTitle, label: כותרת ראשית, widget: string, required: false }
+      - { name: heroSub, label: משפט משנה, widget: text, required: false }
+      - name: faq
+        label: שאלות נפוצות בעמוד
+        widget: list
+        required: false
+        fields:
+          - { name: q, label: שאלה, widget: string }
+          - { name: a, label: תשובה, widget: text }
+      - name: related
+        label: קישורים לעמודים קשורים
+        widget: list
+        required: false
+        fields:
+          - { name: label, label: טקסט הקישור, widget: string }
+          - { name: url, label: כתובת, widget: string }
+      - { name: body, label: תוכן העמוד, widget: markdown }
+
+  # ===== עמודים נוספים =====
+  - name: pages
+    label: עמודים נוספים
+    icon: description
+    files:
+      - name: tools
+        label: כלים טיפוליים
+        file: src/therapeutic-tools.md
+        fields:
+          - { name: layout, label: תבנית, widget: hidden, default: page.njk }
+          - { name: permalink, label: כתובת, widget: hidden }
+          - { name: pageTitle, label: שם העמוד, widget: string }
+          - { name: pageDescription, label: תיאור לגוגל, widget: text }
+          - { name: eyebrow, label: שורה קטנה, widget: string, required: false }
+          - { name: heroTitle, label: כותרת ראשית, widget: string, required: false }
+          - { name: heroSub, label: משפט משנה, widget: text, required: false }
+          - name: faq
+            label: שאלות נפוצות
+            widget: list
+            required: false
+            fields:
+              - { name: q, label: שאלה, widget: string }
+              - { name: a, label: תשובה, widget: text }
+          - name: related
+            label: קישורים קשורים
+            widget: list
+            required: false
+            fields:
+              - { name: label, label: טקסט, widget: string }
+              - { name: url, label: כתובת, widget: string }
+          - { name: body, label: תוכן, widget: markdown }
+      - name: privacy
+        label: מדיניות פרטיות
+        file: src/privacy-policy.md
+        fields:
+          - { name: layout, label: תבנית, widget: hidden }
+          - { name: permalink, label: כתובת, widget: hidden }
+          - { name: pageTitle, label: שם העמוד, widget: string }
+          - { name: pageDescription, label: תיאור לגוגל, widget: text, required: false }
+          - { name: body, label: תוכן, widget: markdown }
+      - name: terms
+        label: תנאי שימוש
+        file: src/terms.md
+        fields:
+          - { name: layout, label: תבנית, widget: hidden }
+          - { name: permalink, label: כתובת, widget: hidden }
+          - { name: pageTitle, label: שם העמוד, widget: string }
+          - { name: pageDescription, label: תיאור לגוגל, widget: text, required: false }
+          - { name: body, label: תוכן, widget: markdown }
+      - name: accessibility
+        label: הצהרת נגישות
+        file: src/accessibility.md
+        fields:
+          - { name: layout, label: תבנית, widget: hidden }
+          - { name: permalink, label: כתובת, widget: hidden }
+          - { name: pageTitle, label: שם העמוד, widget: string }
+          - { name: pageDescription, label: תיאור לגוגל, widget: text, required: false }
+          - { name: body, label: תוכן, widget: markdown }
+
+  # ===== מאמרים =====
   - name: articles
     label: מאמרים
     label_singular: מאמר
+    icon: article
     folder: src/articles
     create: true
     extension: md

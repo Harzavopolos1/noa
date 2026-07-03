@@ -12,22 +12,22 @@ pageDescription: "נועה ארנטל — עו\"ס קלינית (MSW) ופסיכ
 
   <div class="hero-inner">
     <div class="hero-text reveal">
-      <span class="eyebrow">ברוכים הבאים</span>
-      <h1>שלום, אני נועה,<br><span class="accent">מרחב לטיפול וצמיחה</span></h1>
-      <p class="lead">עו"ס קלינית (MSW), פסיכותרפיסטית ומדריכה קלינית. מלווה מבוגרים בתהליך של היכרות עם עצמם, צמיחה ושינוי — בקליניקה בתל אביב ואונליין מכל מקום.</p>
-      <p>אני מאמינה בכוחו של קשר טיפולי סבלני ומותאם אישית לאפשר תנועה וחופש — גם במצבים של קושי, תקיעות ומשבר.</p>
+      <span class="eyebrow">{{ home.hero.eyebrow }}</span>
+      <h1>{{ home.hero.titleLine1 }}<br><span class="accent">{{ home.hero.titleAccent }}</span></h1>
+      <p class="lead">{{ home.hero.lead }}</p>
+      <p>{{ home.hero.sub }}</p>
       <div class="hero-cta">
-        <a href="{{ root }}/contact/" class="btn btn-primary">לתיאום שיחת היכרות</a>
-        <a href="{{ root }}/about/" class="btn btn-ghost">עוד עליי</a>
+        <a href="{{ root }}/contact/" class="btn btn-primary">{{ home.hero.ctaPrimary }}</a>
+        <a href="{{ root }}/about/" class="btn btn-ghost">{{ home.hero.ctaSecondary }}</a>
       </div>
     </div>
 
     <div class="hero-photo reveal d2">
       <div class="photo-stack">
         <div class="photo-frame">
-          <img src="{{ root }}/assets/images/noa.jpg" alt="נועה ארנטל — פסיכותרפיסטית">
+          <img src="{{ root }}{{ home.hero.photo }}" alt="{{ home.hero.photoAlt }}">
         </div>
-        <div class="badge"><strong>תל אביב</strong><span>קליניקה · ואונליין</span></div>
+        <div class="badge"><strong>{{ home.hero.badgeTitle }}</strong><span>{{ home.hero.badgeSub }}</span></div>
       </div>
     </div>
   </div>
@@ -35,28 +35,26 @@ pageDescription: "נועה ארנטל — עו\"ס קלינית (MSW) ופסיכ
 
 <!-- TRUST STRIP -->
 <div class="trust-strip reveal">
-  <span>עו"ס קלינית · MSW</span>
-  <span>פסיכותרפיסטית ומדריכה</span>
-  <span>מומחית לטיפול אונליין</span>
-  <span>עברית · אנגלית</span>
+  {%- for item in home.trustStrip %}
+  <span>{{ item }}</span>
+  {%- endfor %}
 </div>
 
 <!-- ONLINE THERAPY -->
 <section class="band" id="online">
   <div class="band-inner two-col">
     <div class="reveal">
-      <span class="eyebrow">טיפול אונליין</span>
-      <h2>תמיכה רגשית, נגישה מכל מקום</h2>
-      <p>טיפול אונליין הוא תחום ההתמחות שלי: אני משמשת כמנהלת המקצועית הארצית של שירות הפסיכותרפיה המקוונת בחברת שר"ן, ומלווה ומדריכה צוותי מטפלים. אני מביאה את הניסיון הזה גם לטיפול הפרטי שלי.</p>
-      <p>טיפול מקוון מאפשר ליווי מקצועי ורציף לכל מי שגרים רחוק, נמצאים בחו"ל או עם לו"ז צפוף — מבלי לוותר על איכות הקשר הטיפולי. לצד הקליניקה הפרטית בתל אביב, אני מטפלת אונליין מכל מקום, בסביבה בטוחה ודיסקרטית.</p>
-      <a href="{{ root }}/contact/" class="btn btn-primary" style="margin-top:22px">לייעוץ לגבי טיפול אונליין</a>
+      <span class="eyebrow">{{ home.online.eyebrow }}</span>
+      <h2>{{ home.online.title }}</h2>
+      <p>{{ home.online.p1 }}</p>
+      <p>{{ home.online.p2 }}</p>
+      <a href="{{ root }}/contact/" class="btn btn-primary" style="margin-top:22px">{{ home.online.cta }}</a>
     </div>
     <div class="reveal d2">
       <ul class="check-list">
-        <li>גמיש ונגיש — מכל מקום בארץ ובעולם</li>
-        <li>דיסקרטי ומותאם אישית</li>
-        <li>רצף טיפולי ללא תלות במרחק</li>
-        <li>גם בקליניקה בתל אביב וגם בזום</li>
+        {%- for item in home.online.checklist %}
+        <li>{{ item }}</li>
+        {%- endfor %}
       </ul>
     </div>
   </div>
@@ -66,17 +64,14 @@ pageDescription: "נועה ארנטל — עו\"ס קלינית (MSW) ופסיכ
 <section class="band band-soft" id="methods">
   <div class="band-inner">
     <div class="section-head reveal">
-      <span class="eyebrow" style="justify-content:center">גישה ושיטות</span>
-      <h2>גישה אינטגרטיבית, מותאמת אליך</h2>
-      <p>שילוב של טיפול דינמי "קלאסי" עם כלים מבוססי מחקר — מתוך קשיבות לחוויה הרגשית, הגופנית והבין־אישית.</p>
+      <span class="eyebrow" style="justify-content:center">{{ home.methods.eyebrow }}</span>
+      <h2>{{ home.methods.title }}</h2>
+      <p>{{ home.methods.sub }}</p>
     </div>
     <div class="methods-grid">
-      <div class="method-card reveal">   <span class="method-tag">דינמי</span><p>טיפול פסיכודינמי</p></div>
-      <div class="method-card reveal d1"> <span class="method-tag">CBT</span><p>קוגניטיבי־התנהגותי</p></div>
-      <div class="method-card reveal d2"> <span class="method-tag">ACT</span><p>קבלה ומחויבות</p></div>
-      <div class="method-card reveal">   <span class="method-tag">DBT</span><p>דיאלקטי התנהגותי</p></div>
-      <div class="method-card reveal d1"> <span class="method-tag">סכמה</span><p>סכמה תרפיה</p></div>
-      <div class="method-card reveal d2"> <span class="method-tag">מיינדפולנס</span><p>קשיבות ועבודה עם הגוף</p></div>
+      {%- for card in home.methods.cards %}
+      <div class="method-card reveal{{ ['', ' d1', ' d2'][loop.index0 % 3] }}"><span class="method-tag">{{ card.tag }}</span><p>{{ card.text }}</p></div>
+      {%- endfor %}
     </div>
   </div>
 </section>
@@ -85,13 +80,13 @@ pageDescription: "נועה ארנטל — עו\"ס קלינית (MSW) ופסיכ
 <section class="band">
   <div class="band-inner">
     <div class="section-head reveal">
-      <span class="eyebrow" style="justify-content:center">איך מתחילים</span>
-      <h2>הדרך אל הפגישה הראשונה</h2>
+      <span class="eyebrow" style="justify-content:center">{{ home.steps.eyebrow }}</span>
+      <h2>{{ home.steps.title }}</h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><span class="connector"></span><span class="num">01</span><h3>פנייה ראשונית</h3><p>משאירים פרטים בטופס, בטלפון או בוואטסאפ — ואחזור אליכם בהקדם.</p></div>
-      <div class="step reveal d1"><span class="connector"></span><span class="num">02</span><h3>שיחת היכרות</h3><p>שיחה להבין מה מביא אתכם, ולחשוב יחד על הטיפול המתאים והמדויק ביותר עבורכם.</p></div>
-      <div class="step reveal d2"><span class="connector"></span><span class="num">03</span><h3>תהליך מותאם</h3><p>בונים יחד מרחב בטוח, לא שיפוטי ומחזיק — בקצב שלכם ובדרך שנכונה לכם.</p></div>
+      {%- for step in home.steps.items %}
+      <div class="step reveal{{ ['', ' d1', ' d2'][loop.index0 % 3] }}"><span class="connector"></span><span class="num">0{{ loop.index }}</span><h3>{{ step.title }}</h3><p>{{ step.text }}</p></div>
+      {%- endfor %}
     </div>
   </div>
 </section>
@@ -100,14 +95,13 @@ pageDescription: "נועה ארנטל — עו\"ס קלינית (MSW) ופסיכ
 <section class="band band-soft" id="practical">
   <div class="band-inner">
     <div class="section-head reveal">
-      <span class="eyebrow" style="justify-content:center">פרטים מעשיים</span>
-      <h2>מה חשוב לדעת</h2>
+      <span class="eyebrow" style="justify-content:center">{{ home.practical.eyebrow }}</span>
+      <h2>{{ home.practical.title }}</h2>
     </div>
     <div class="practical-grid reveal d1">
-      <div class="practical-item"><strong>איפה</strong><span>בקליניקה בתל אביב, או אונליין בשיחת וידאו — מכל מקום בארץ ובעולם</span></div>
-      <div class="practical-item"><strong>למי</strong><span>מבוגרים, ונוער מגיל 16</span></div>
-      <div class="practical-item"><strong>באיזו שפה</strong><span>עברית ואנגלית</span></div>
-      <div class="practical-item"><strong>הכרה</strong><span>ספקית מוכרת של משרד הביטחון — אגף משפחות</span></div>
+      {%- for item in home.practical.items %}
+      <div class="practical-item"><strong>{{ item.label }}</strong><span>{{ item.text }}</span></div>
+      {%- endfor %}
     </div>
   </div>
 </section>
@@ -116,8 +110,8 @@ pageDescription: "נועה ארנטל — עו\"ס קלינית (MSW) ופסיכ
 <section class="band band-quote reveal">
   <div class="band-inner narrow">
     <span class="mark">”</span>
-    <blockquote>אני מאמינה בכוחו של קשר טיפולי סבלני ומותאם אישית — לאפשר צמיחה, חופש ותנועה, גם במצבים של קושי, תקיעות ומשבר.</blockquote>
-    <cite>— נועה ארנטל, עו"ס קלינית ופסיכותרפיסטית</cite>
+    <blockquote>{{ home.quote.text }}</blockquote>
+    <cite>{{ home.quote.cite }}</cite>
   </div>
 </section>
 
@@ -125,20 +119,14 @@ pageDescription: "נועה ארנטל — עו\"ס קלינית (MSW) ופסיכ
 <section class="band band-cream" id="areas">
   <div class="band-inner">
     <div class="section-head reveal">
-      <span class="eyebrow" style="justify-content:center">תחומי טיפול</span>
-      <h2>התחומים בהם אני מלווה</h2>
-      <p>מלווה נוער (מעל גיל 16), נשים וגברים בהתמודדויות מגוונות:</p>
+      <span class="eyebrow" style="justify-content:center">{{ home.areas.eyebrow }}</span>
+      <h2>{{ home.areas.title }}</h2>
+      <p>{{ home.areas.sub }}</p>
     </div>
     <div class="areas-grid reveal d1">
-      <span class="area-pill">חרדה ודיכאון</span>
-      <span class="area-pill">שכול ואובדן</span>
-      <span class="area-pill">משברי חיים</span>
-      <span class="area-pill">פוסט טראומה</span>
-      <span class="area-pill">התמכרויות ותחלואה כפולה</span>
-      <span class="area-pill">העצמה נשית</span>
-      <span class="area-pill">זהות, מיניות ומגדר</span>
-      <span class="area-pill">טיפול מותאם לקהילה הגאה</span>
-      <span class="area-pill">קשיים בינאישיים ודימוי עצמי</span>
+      {%- for pill in home.areas.pills %}
+      <span class="area-pill">{{ pill }}</span>
+      {%- endfor %}
     </div>
   </div>
 </section>
@@ -147,56 +135,40 @@ pageDescription: "נועה ארנטל — עו\"ס קלינית (MSW) ופסיכ
 <section class="band" id="faq">
   <div class="band-inner">
     <div class="section-head reveal">
-      <span class="eyebrow" style="justify-content:center">שאלות נפוצות</span>
-      <h2>שאלות שאולי עולות לך</h2>
+      <span class="eyebrow" style="justify-content:center">{{ home.faqSection.eyebrow }}</span>
+      <h2>{{ home.faqSection.title }}</h2>
     </div>
     <div class="faq-list reveal d1">
+      {%- for f in home.faqSection.items %}
       <details class="faq-item">
-        <summary>איך יודעים אם טיפול מתאים לי?</summary>
-        <div class="faq-body">לא חייבים לדעת מראש. הצעד הראשון הוא שיחת היכרות קצרה וללא התחייבות — נכיר, נבין מה מביא אותך, ונחשוב יחד אם ואיך הטיפול יכול לעזור.</div>
+        <summary>{{ f.q }}</summary>
+        <div class="faq-body">{{ f.a }}</div>
       </details>
-      <details class="faq-item">
-        <summary>האם טיפול אונליין באמת יעיל?</summary>
-        <div class="faq-body">כן. מחקרים מראים שטיפול מקוון יעיל לא פחות מטיפול פנים אל פנים. זהו תחום ההתמחות שלי — אני מנהלת ומדריכה צוותי מטפלים בשירות פסיכותרפיה מקוונת, ומביאה את הניסיון הזה לכל פגישה.</div>
-      </details>
-      <details class="faq-item">
-        <summary>כמה זמן נמשך תהליך טיפולי?</summary>
-        <div class="faq-body">זה משתנה מאדם לאדם ותלוי במטרות ובקצב שלך. יש תהליכים קצרים וממוקדים ויש מתמשכים יותר. נגדיר יחד מטרות ונבחן את ההתקדמות לאורך הדרך.</div>
-      </details>
-      <details class="faq-item">
-        <summary>מה נשאר חסוי?</summary>
-        <div class="faq-body">הכול. על המידע שנמסר בטיפול חלה חובת סודיות מקצועית מלאה, בהתאם לכללי האתיקה של העובדים הסוציאליים ולחוק.</div>
-      </details>
-      <details class="faq-item">
-        <summary>איך מתחילים?</summary>
-        <div class="faq-body">משאירים פרטים בטופס, בטלפון או בוואטסאפ, ואחזור אליכם לתיאום שיחת היכרות ראשונית. משם נמשיך יחד בקצב שמתאים לכם.</div>
-      </details>
+      {%- endfor %}
     </div>
   </div>
 </section>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"איך יודעים אם טיפול מתאים לי?","acceptedAnswer":{"@type":"Answer","text":"לא חייבים לדעת מראש. הצעד הראשון הוא שיחת היכרות קצרה וללא התחייבות — נכיר, נבין מה מביא אותך, ונחשוב יחד אם ואיך הטיפול יכול לעזור."}},
-{"@type":"Question","name":"האם טיפול אונליין באמת יעיל?","acceptedAnswer":{"@type":"Answer","text":"כן. מחקרים מראים שטיפול מקוון יעיל לא פחות מטיפול פנים אל פנים. זהו תחום ההתמחות שלי — אני מנהלת ומדריכה צוותי מטפלים בשירות פסיכותרפיה מקוונת, ומביאה את הניסיון הזה לכל פגישה."}},
-{"@type":"Question","name":"כמה זמן נמשך תהליך טיפולי?","acceptedAnswer":{"@type":"Answer","text":"זה משתנה מאדם לאדם ותלוי במטרות ובקצב שלך. יש תהליכים קצרים וממוקדים ויש מתמשכים יותר. נגדיר יחד מטרות ונבחן את ההתקדמות לאורך הדרך."}},
-{"@type":"Question","name":"מה נשאר חסוי?","acceptedAnswer":{"@type":"Answer","text":"הכול. על המידע שנמסר בטיפול חלה חובת סודיות מקצועית מלאה, בהתאם לכללי האתיקה של העובדים הסוציאליים ולחוק."}},
-{"@type":"Question","name":"איך מתחילים?","acceptedAnswer":{"@type":"Answer","text":"משאירים פרטים בטופס, בטלפון או בוואטסאפ, ואחזור אליכם לתיאום שיחת היכרות ראשונית. משם נמשיך יחד בקצב שמתאים לכם."}}
+{%- for f in home.faqSection.items %}
+{"@type":"Question","name":{{ f.q | dump | safe }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a | dump | safe }}}}{{ "," if not loop.last }}
+{%- endfor %}
 ]}</script>
 
 <!-- CONTACT -->
 <section class="band band-contact" id="contact">
   <div class="band-inner two-col contact-block">
     <div class="reveal">
-      <span class="eyebrow">צור קשר</span>
-      <h2>בואו נהיה בקשר</h2>
-      <p>ההחלטה לפנות לטיפול היא צעד אמיץ. אני מזמינה אתכם להתייעץ איתי בלי התחייבות — מלאו פרטים ואחזור אליכם בהקדם.</p>
+      <span class="eyebrow">{{ home.contact.eyebrow }}</span>
+      <h2>{{ home.contact.title }}</h2>
+      <p>{{ home.contact.text }}</p>
       <div class="contact-direct">
-        <a href="tel:{{ site.phoneIntl }}" class="contact-line"><span aria-hidden="true">📞</span> {{ site.phone }}</a>
-        <a href="https://wa.me/{{ site.whatsapp }}" class="contact-line" target="_blank" rel="noopener"><span aria-hidden="true">💬</span> שליחת הודעת WhatsApp</a>
-        <a href="{{ site.facebook }}" class="contact-line" target="_blank" rel="noopener"><span aria-hidden="true">👋</span> עמוד הפייסבוק שלי</a>
-        <a href="{{ site.linkedin }}" class="contact-line" target="_blank" rel="noopener"><span aria-hidden="true">🔗</span> הפרופיל המקצועי שלי ב‑LinkedIn</a>
+        <a href="tel:{{ business.phoneIntl }}" class="contact-line"><span aria-hidden="true">📞</span> {{ business.phone }}</a>
+        <a href="https://wa.me/{{ business.whatsapp }}" class="contact-line" target="_blank" rel="noopener"><span aria-hidden="true">💬</span> שליחת הודעת WhatsApp</a>
+        <a href="{{ business.facebook }}" class="contact-line" target="_blank" rel="noopener"><span aria-hidden="true">👋</span> עמוד הפייסבוק שלי</a>
+        <a href="{{ business.linkedin }}" class="contact-line" target="_blank" rel="noopener"><span aria-hidden="true">🔗</span> הפרופיל המקצועי שלי ב‑LinkedIn</a>
       </div>
-      <p style="margin-top:18px;color:var(--muted);font-size:.92rem">{{ site.location }}<br>{{ site.license }}</p>
+      <p style="margin-top:18px;color:var(--muted);font-size:.92rem">{{ business.location }}<br>{{ business.license }}</p>
     </div>
     <form class="contact-form reveal d2" onsubmit="return handleContact(event)">
       <input type="checkbox" name="botcheck" class="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -206,7 +178,7 @@ pageDescription: "נועה ארנטל — עו\"ס קלינית (MSW) ופסיכ
       <label>איך אוכל לעזור לך?<textarea name="message" rows="4"></textarea></label>
       <label class="consent"><input type="checkbox" required> אני מאשר/ת את <a href="{{ root }}/privacy-policy/">מדיניות הפרטיות</a></label>
       <button type="submit" class="btn btn-primary btn-block">שליחה</button>
-      <p class="form-note">אחזור אליך תוך יום עסקים. הפרטים נשמרים בסודיות מלאה.</p>
+      <p class="form-note">{{ contactPage.formNote }}</p>
       <p class="form-msg" hidden></p>
     </form>
   </div>

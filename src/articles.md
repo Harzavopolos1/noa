@@ -25,7 +25,7 @@ pageDescription: "מאמרים מאת נועה ארנטל — פסיכותרפי
       </a>
       {% endfor %}
     </div>
-    <p style="margin-top:34px;color:var(--muted)">רוצים לקרוא עוד? אני משתפת תכנים גם ב<a href="{{ site.facebook }}" target="_blank" rel="noopener" style="text-decoration:underline">עמוד הפייסבוק שלי</a>.</p>
+    <p style="margin-top:34px;color:var(--muted)">רוצים לקרוא עוד? אני משתפת תכנים גם ב<a href="{{ business.facebook }}" target="_blank" rel="noopener" style="text-decoration:underline">עמוד הפייסבוק שלי</a>.</p>
   </div>
 </section>
 
@@ -35,7 +35,7 @@ pageDescription: "מאמרים מאת נועה ארנטל — פסיכותרפי
     <p>שיחת היכרות ראשונית, ללא התחייבות — נחשוב יחד מה הכי מתאים עבורכם.</p>
     <div class="cta-actions">
       <a href="{{ root }}/contact/" class="btn btn-primary">לתיאום שיחה</a>
-      <a href="https://wa.me/{{ site.whatsapp }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://wa.me/{{ business.whatsapp }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>

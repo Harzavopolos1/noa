@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% set fullTitle %}{% if pageTitle %}{{ pageTitle }} — {{ site.therapistName }}{% else %}{{ site.title }}{% endif %}{% endset %}
+  {% set fullTitle %}{% if pageTitle %}{{ pageTitle }} — {{ business.therapistName }}{% else %}{{ site.title }}{% endif %}{% endset %}
   <title>{{ fullTitle }}</title>
   <meta name="description" content="{{ pageDescription or site.description }}">
   {% set root = page.url | rootPath %}
@@ -36,13 +36,13 @@
       {
         "@type": "Person",
         "@id": "{{ site.url }}/#noa",
-        "name": "{{ site.therapistName }}",
+        "name": "{{ business.therapistName }}",
         "jobTitle": "עובדת סוציאלית קלינית (MSW), פסיכותרפיסטית מוסמכת ומדריכה קלינית",
         "image": "{{ site.url }}{{ site.ogImage }}",
         "url": "{{ site.url }}/",
-        "telephone": "{{ site.phoneIntl }}",
+        "telephone": "{{ business.phoneIntl }}",
         "knowsLanguage": ["he", "en"],
-        "sameAs": ["{{ site.facebook }}", "{{ site.linkedin }}"]
+        "sameAs": ["{{ business.facebook }}", "{{ business.linkedin }}"]
       },
       {
         "@type": "ProfessionalService",
@@ -51,7 +51,7 @@
         "description": "{{ site.description }}",
         "url": "{{ site.url }}/",
         "image": "{{ site.url }}{{ site.ogImage }}",
-        "telephone": "{{ site.phoneIntl }}",
+        "telephone": "{{ business.phoneIntl }}",
         "address": { "@type": "PostalAddress", "addressLocality": "תל אביב–יפו", "addressCountry": "IL" },
         "areaServed": "ישראל",
         "founder": { "@id": "{{ site.url }}/#noa" }
@@ -75,8 +75,8 @@
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
       <a href="{{ root }}/" class="brand">
-        <span class="brand-name">{{ site.therapistName }}</span>
-        <span class="brand-sub">{{ site.profession }}</span>
+        <span class="brand-name">{{ business.therapistName }}</span>
+        <span class="brand-sub">{{ business.profession }}</span>
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="תפריט" aria-expanded="false">
@@ -112,12 +112,12 @@
     <div class="footer-inner">
 
       <div class="footer-col footer-about">
-        <div class="footer-brand">{{ site.therapistName }}</div>
-        <p>{{ site.profession }}. עבורי זו זכות גדולה ללוות אנשים בתהליך של היכרות עם עצמם ושיפור איכות חייהם הרגשית והחברתית.</p>
+        <div class="footer-brand">{{ business.therapistName }}</div>
+        <p>{{ business.profession }}. עבורי זו זכות גדולה ללוות אנשים בתהליך של היכרות עם עצמם ושיפור איכות חייהם הרגשית והחברתית.</p>
         <div class="footer-contact">
-          <a href="tel:{{ site.phoneIntl }}">{{ site.phone }}</a>
-          <a href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a>
-          {% if site.facebook %}<a href="{{ site.facebook }}" target="_blank" rel="noopener">פייסבוק</a>{% endif %}
+          <a href="tel:{{ business.phoneIntl }}">{{ business.phone }}</a>
+          <a href="https://wa.me/{{ business.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a>
+          {% if business.facebook %}<a href="{{ business.facebook }}" target="_blank" rel="noopener">פייסבוק</a>{% endif %}
         </div>
       </div>
 
@@ -151,12 +151,12 @@
 
     </div>
     <div class="footer-bottom">
-      <span>© {{ site.therapistName }} · כל הזכויות שמורות</span>
+      <span>© {{ business.therapistName }} · כל הזכויות שמורות</span>
     </div>
   </footer>
 
   <!-- WhatsApp floating button -->
-  <a href="https://wa.me/{{ site.whatsapp }}" class="wa-float" target="_blank" rel="noopener" aria-label="שליחת הודעת WhatsApp">
+  <a href="https://wa.me/{{ business.whatsapp }}" class="wa-float" target="_blank" rel="noopener" aria-label="שליחת הודעת WhatsApp">
     <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
       <path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.8 5.5 2.2 7.9L.4 31.6l7.9-2.1c2.3 1.3 4.9 1.9 7.7 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.3c-2.5 0-4.9-.7-7-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5c-1.4-2.2-2.1-4.7-2.1-7.2C2.9 8.7 8.8 2.9 16 2.9S29.1 8.7 29.1 16 23.2 28.8 16 28.8zm7.2-9.6c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.2.3-.4.4-.7.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-.9.5-.3.4-1.2 1.2-1.2 2.9 0 1.7 1.2 3.3 1.4 3.6.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/>
     </svg>
