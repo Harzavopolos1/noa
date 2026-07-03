@@ -34,7 +34,7 @@
   els.forEach(function (el) { io.observe(el); });
 })();
 
-// Contact form — Web3Forms (AJAX, stays on page)
+// Contact form — own lead endpoint (Cloudflare Worker: noa-leads)
 function showFormError(msg) {
   if (!msg) return;
   msg.hidden = false;
@@ -49,17 +49,12 @@ function handleContact(e) {
   var msg = form.querySelector('.form-msg');
   var btn = form.querySelector('button[type="submit"]');
   var data = new FormData(form);
-
-  // Key not wired yet → graceful fallback to direct channels
-  if (!data.get('access_key')) {
-    showFormError(msg);
-    return false;
-  }
+  data.set('page', window.location.pathname);
 
   var orig = btn ? btn.textContent : '';
   if (btn) { btn.disabled = true; btn.textContent = 'שולחת…'; }
 
-  fetch('https://api.web3forms.com/submit', {
+  fetch('https://noa-leads.orneviot.workers.dev/', {
     method: 'POST',
     body: data,
     headers: { 'Accept': 'application/json' }

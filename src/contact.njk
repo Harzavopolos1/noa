@@ -23,9 +23,6 @@ pageDescription: "צרו קשר עם נועה ארנטל — פסיכותרפי�
       <p style="margin-top:18px;color:var(--muted);font-size:.92rem">{{ site.location }}<br>{{ site.license }}</p>
     </div>
     <form class="contact-form" onsubmit="return handleContact(event)">
-      <input type="hidden" name="access_key" value="{{ site.web3formsKey }}">
-      <input type="hidden" name="subject" value="פנייה חדשה מהאתר — נועה ארנטל">
-      <input type="hidden" name="from_name" value="האתר של נועה ארנטל">
       <input type="checkbox" name="botcheck" class="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label>שם מלא *<input type="text" name="name" required></label>
       <label>טלפון *<input type="tel" name="phone" required></label>
