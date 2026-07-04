@@ -35,6 +35,37 @@
           "label": "טיפול דינמי אונליין",
           "url": "/online-therapy/dynamic/"
         }
+      ],
+      "overview": "סקירה — טיפול אונליין"
+    },
+    {
+      "label": "תחומי טיפול",
+      "url": "/#areas",
+      "children": [
+        {
+          "label": "טיפול בחרדה",
+          "url": "/anxiety/"
+        },
+        {
+          "label": "טיפול בדיכאון",
+          "url": "/depression/"
+        },
+        {
+          "label": "טיפול באבל ואובדן",
+          "url": "/grief/"
+        },
+        {
+          "label": "טיפול בטראומה",
+          "url": "/trauma/"
+        },
+        {
+          "label": "העצמה נשית",
+          "url": "/women/"
+        },
+        {
+          "label": "טיפול לקהילה הגאה",
+          "url": "/lgbtq/"
+        }
       ]
     },
     {

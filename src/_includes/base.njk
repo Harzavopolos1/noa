@@ -86,10 +86,12 @@
       <nav class="main-nav" id="mainNav" aria-label="ניווט ראשי">
         {% for item in site.nav %}
           {% if item.children %}
+          {% set parentActive = false %}
+          {% for c in item.children %}{% if page.url == c.url %}{% set parentActive = true %}{% endif %}{% endfor %}
           <div class="nav-item has-children">
-            <a href="{{ root }}{{ item.url }}" class="nav-parent{% if '/online-therapy' in page.url %} active{% endif %}">{{ item.label }}<span class="caret" aria-hidden="true">▾</span></a>
+            <a href="{{ root }}{{ item.url }}" class="nav-parent{% if parentActive or (item.url != '/#areas' and item.url in page.url) %} active{% endif %}">{{ item.label }}<span class="caret" aria-hidden="true">▾</span></a>
             <div class="nav-dropdown">
-              <a href="{{ root }}{{ item.url }}">סקירה — טיפול אונליין</a>
+              {% if item.overview %}<a href="{{ root }}{{ item.url }}">{{ item.overview }}</a>{% endif %}
               {% for c in item.children %}
               <a href="{{ root }}{{ c.url }}"{% if page.url == c.url %} class="active"{% endif %}>{{ c.label }}</a>
               {% endfor %}

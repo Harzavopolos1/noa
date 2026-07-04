@@ -513,3 +513,7 @@ input:focus-visible, textarea:focus-visible {
   .assist-float { padding: 16px; }
   .assist-panel { bottom: 0; inset-inline-end: 0; width: 100vw; height: min(85dvh, 640px); border-radius: 20px 20px 0 0; }
 }
+
+/* linked area pills */
+a.area-pill-link { cursor: pointer; transition: background .2s, color .2s, transform .18s; }
+a.area-pill-link:hover { background: var(--green); color: #fff; transform: translateY(-2px); }

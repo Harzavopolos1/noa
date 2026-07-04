@@ -125,7 +125,11 @@ pageDescription: "נועה ארנטל — עו\"ס קלינית (MSW) ופסיכ
     </div>
     <div class="areas-grid reveal d1">
       {%- for pill in home.areas.pills %}
-      <span class="area-pill">{{ pill }}</span>
+      {%- if pill.url %}
+      <a class="area-pill area-pill-link" href="{{ root }}{{ pill.url }}">{{ pill.label }}</a>
+      {%- else %}
+      <span class="area-pill">{{ pill.label if pill.label else pill }}</span>
+      {%- endif %}
       {%- endfor %}
     </div>
   </div>

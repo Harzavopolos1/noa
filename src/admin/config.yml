@@ -108,7 +108,9 @@ collections:
               - name: pills
                 label: תחומי הטיפול
                 widget: list
-                field: { name: item, label: תחום, widget: string }
+                fields:
+                  - { name: label, label: שם התחום, widget: string }
+                  - { name: url, label: "קישור לעמוד (ריק = ללא קישור)", widget: string, required: false }
           - name: faqSection
             label: שאלות נפוצות
             widget: object
